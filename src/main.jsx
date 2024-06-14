@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Global } from "@emotion/react";
 
 const colors = {
   brand: {
@@ -15,6 +16,13 @@ const theme = extendTheme({ colors });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Global
+      styles={`
+        body {
+          background-color: #fff1e5; /* Financial Times background color */
+        }
+      `}
+    />
     <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
